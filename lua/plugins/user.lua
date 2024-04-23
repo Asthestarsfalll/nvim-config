@@ -140,7 +140,8 @@ return {
   { "f-person/git-blame.nvim" },
   {
     "karb94/neoscroll.nvim",
-    event = "User TrueLoad",
+    -- event = "User TrueLoad",
+    event = "VeryLazy",
     config = function()
       require("neoscroll").setup {
         -- All these keys will be mapped to their corresponding default scrolling animation
@@ -264,20 +265,20 @@ return {
       }
     end,
   },
-  {
-    "HallerPatrick/py_lsp.nvim",
-    event = "User TrueLoad",
-    config = function()
-      require("py_lsp").setup {
-        enhanced_diff_hl = true,
-        host_python = "/usr/bin",
-      }
-    end,
-  },
-  {
-    "MysticalDevil/inlay-hints.nvim",
-    event = "LspAttach",
-    dependencies = { "neovim/nvim-lspconfig" },
-    config = function() require("inlay-hints").setup() end,
-  },
+  -- {
+  --   "HallerPatrick/py_lsp.nvim",
+  --   event = "User TrueLoad",
+  --   config = function()
+  --     require("py_lsp").setup {
+  --       enhanced_diff_hl = true,
+  --       host_python = "/usr/bin",
+  --     }
+  --   end,
+  -- },
+  -- {
+  --   "MysticalDevil/inlay-hints.nvim",
+  --   event = "LspAttach",
+  --   dependencies = { "neovim/nvim-lspconfig" },
+  --   config = function() require("inlay-hints").setup() end,
+  -- },
 }
