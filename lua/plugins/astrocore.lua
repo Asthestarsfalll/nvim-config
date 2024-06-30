@@ -33,6 +33,9 @@ return {
         wrap = false, -- sets vim.opt.wrap
         scrolloff = 15,
         guifont = "CaskaydiaCove Nerd Font:h14",
+        foldlevel = 99,
+        foldmethod = "expr",
+        foldexpr = "v:lua.require'utils'.foldexpr()"
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)

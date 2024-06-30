@@ -24,11 +24,10 @@ return {
   },
 
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-
   "folke/tokyonight.nvim",
   {
     "h-hg/fcitx.nvim",
-    event = "User TrueLoad",
+    event = "BufEnter",
   },
 
   {
@@ -222,7 +221,7 @@ return {
       { "<leader>-", ":Triptych<CR>", desc = "pick close", silent = true, noremap = true },
     },
   },
-  { "LudoPinelli/comment-box.nvim" },
+  { "LudoPinelli/comment-box.nvim", event = "BufEnter" },
   {
     "Asthestarsfalll/excore.nvim",
     ft = "toml",
@@ -265,20 +264,126 @@ return {
       }
     end,
   },
-  -- {
-  --   "HallerPatrick/py_lsp.nvim",
-  --   event = "User TrueLoad",
-  --   config = function()
-  --     require("py_lsp").setup {
-  --       enhanced_diff_hl = true,
-  --       host_python = "/usr/bin",
-  --     }
-  --   end,
-  -- },
-  -- {
-  --   "MysticalDevil/inlay-hints.nvim",
-  --   event = "LspAttach",
-  --   dependencies = { "neovim/nvim-lspconfig" },
-  --   config = function() require("inlay-hints").setup() end,
-  -- },
+  {
+    "ellisonleao/carbon-now.nvim",
+    lazy = true,
+    cmd = "CarbonNow",
+    opts = {
+      bg = "gray",
+      drop_shadow_blur = "68px",
+      drop_shadow = false,
+      drop_shadow_offset_y = "20px",
+      font_family = "Hack",
+      font_size = "18px",
+      line_height = "133%",
+      line_numbers = true,
+      theme = "rose-pine",
+      titlebar = "Made with carbon-now.nvim",
+      watermark = false,
+      width = "680",
+      window_theme = "sharp",
+      padding_horizontal = "0px",
+      padding_vertical = "0px",
+    },
+  },
+  {
+    "mikavilpas/yazi.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    enabled = function()
+      if vim.fn.executable "yazi" == 1 then return true end
+      return false
+    end,
+    lazy = true,
+    keys = {
+      {
+        "<C-->",
+        function() require("yazi").yazi() end,
+        desc = "Open the file manager",
+      },
+      {
+        "<leader>a",
+        function() require("yazi").yazi(nil, vim.fn.getcwd()) end,
+        desc = "Open yazi in CWD",
+      },
+    },
+    opts = {
+      open_for_directories = true,
+      floating_window_scaling_factor = 1,
+    },
+  },
+  {
+    "MysticalDevil/inlay-hints.nvim",
+    event = "LspAttach",
+    dependencies = { "neovim/nvim-lspconfig" },
+    config = function() require("inlay-hints").setup() end,
+  },
+  {
+    "arsham/indent-tools.nvim",
+    dependencies = { "arsham/arshlib.nvim" },
+    event = "User AstroFile",
+    config = function()
+      require("indent-tools").config {
+        normal = {
+          up = "[p",
+          down = "][",
+          repeatable = true, -- requires nvim-treesitter-textobjects
+        },
+      }
+    end,
+  },
+  -- TODO:https://github.com/AstroNvim/AstroNvim/issues/2593{
+  { "NvChad/nvim-colorizer.lua", enabled = false },
+  {
+    "brenoprata10/nvim-highlight-colors",
+    event = "User TureLoad",
+    cmd = "HighlightColors",
+    dependencies = {
+      {
+        "AstroNvim/astrocore",
+        opts = function(_, opts)
+          local maps = opts.mappings
+          maps.n["<Leader>uz"] = { function() vim.cmd.HighlightColors "Toggle" end, desc = "Toggle color highlight" }
+        end,
+      },
+    },
+    opts = {
+      enabled_named_colors = false,
+      render = "virtual",
+      virtual_symbol_position = "inline",
+      enable_tailwind = true,
+    },
+  },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    event = "User AstroFile",
+    main = "rainbow-delimiters.setup",
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "BufEnter",
+    opts = {
+      enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+      max_lines = 5, -- How many lines the window should span. Values <= 0 mean no limit.
+      min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+      line_numbers = true,
+      multiline_threshold = 20, -- Maximum number of lines to show for a single context
+      trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+      mode = "topline", -- Line used to calculate context. Choices: 'cursor', 'topline'
+      -- Separator between context and content. Should be a single character string, like '-'.
+      -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+      separator = nil,
+      zindex = 20, -- The Z-index of the context window
+      on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+    },
+    keys = {
+      {
+        "[c",
+        function() require("treesitter-context").go_to_context(vim.v.count1) end,
+        desc = "Jumping to context (upwards)",
+      },
+    },
+  },
 }

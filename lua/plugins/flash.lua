@@ -12,7 +12,7 @@ return {
       desc = "Treesitter Search",
     },
     {
-      "<c-a>",
+      "<C-s>",
       mode = { "c" },
       function() require("flash").toggle() end,
       desc = "Toggle Flash Search",
@@ -25,19 +25,19 @@ return {
         -- when `true`, flash will be activated during regular search by default.
         -- You can always toggle when searching with `require("flash").toggle()`
         enabled = true,
-        highlight = { backdrop = false },
-        jump = { history = true, register = true, nohlsearch = true },
-        search = {
-          -- `forward` will be automatically set to the search direction
-          -- `mode` is always set to `search`
-          -- `incremental` is set to `true` when `incsearch` is enabled
-        },
+        -- highlight = { backdrop = false },
+        -- jump = { history = true, register = true, nohlsearch = true },
+        -- search = {
+        --   -- `forward` will be automatically set to the search direction
+        --   -- `mode` is always set to `search`
+        --   -- `incremental` is set to `true` when `incsearch` is enabled
+        -- },
       },
     },
     jump = { autojump = true },
     label = {
       -- allow uppercase labels
-      uppercase = true,
+      uppercase = false,
       -- add a label for the first match in the current window.
       -- you can always jump to the first match with `<CR>`
       current = true,

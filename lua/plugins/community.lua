@@ -9,7 +9,7 @@ return {
   -- { import = "astrocommunity.bars-and-lines.statuscol-nvim" },
   -- { import = "astrocommunity.color.ccc-nvim" },
   { import = "astrocommunity.color.headlines-nvim" },
-
+  { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.color.mini-hipatterns" },
   { import = "astrocommunity.color.tint-nvim" },
 }
