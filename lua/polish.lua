@@ -3,7 +3,7 @@
 -- fit in the normal config locations above can go here
 -- Set up custom filetypes
 vim.filetype.add {
-    extension = {foo = "fooscript"},
-    filename = {["Foofile"] = "fooscript"},
-    pattern = {["~/%.config/foo/.*"] = "fooscript"}
+  extension = { foo = "fooscript" },
+  filename = { ["Foofile"] = "fooscript" },
+  pattern = { ["~/%.config/foo/.*"] = "fooscript" },
 }

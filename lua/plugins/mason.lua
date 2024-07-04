@@ -13,7 +13,6 @@ return {
         "lua_ls",
         "basedpyright",
         -- add more arguments for adding more language servers
-        -- "lua_ls",
       })
     end,
   },
@@ -28,8 +27,6 @@ return {
         "prettier",
         "stylua",
         -- add more arguments for adding more null-ls sources
-        -- "prettier",
-        -- "stylua",
       })
     end,
   },

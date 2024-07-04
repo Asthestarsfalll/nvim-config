@@ -18,9 +18,15 @@ local l = extras.l
 local postfix = require("luasnip.extras.postfix").postfix
 
 return {
-    s("doc", {
-        t {"---", "title: "}, i(1), t {"", "authors:", "  - "}, i(2),
-        t {"", "tags:", "  - "}, i(3), t {"", "hide_table_of_contents: false"},
-        i(0), t {"", "---"}
-    })
+  s("doc", {
+    t { "---", "title: " },
+    i(1),
+    t { "", "authors:", "  - " },
+    i(2),
+    t { "", "tags:", "  - " },
+    i(3),
+    t { "", "hide_table_of_contents: false" },
+    i(0),
+    t { "", "---" },
+  }),
 }

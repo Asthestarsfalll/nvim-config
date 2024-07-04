@@ -18,20 +18,27 @@ local l = extras.l
 local postfix = require("luasnip.extras.postfix").postfix
 
 return {
-    s("lnode", {
-        t {
-            "struct ListNode {", "  int val;", "  ListNode *next;",
-            "  ListNode() : val(0), next(nullptr) {}",
-            "  ListNode(int x) : val(x), next(nullptr) {}",
-            "  ListNode(int x, ListNode *next) : val(x), next(next) {}", "};"
-        }
-    }), s("tnode", {
-        t {
-            "struct TreeNode{", "  int val;", "  TreeNode *left, *right;",
-            "  TreeNode() : val(0), left(nullptr), right(nullptr) {}",
-            "  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}",
-            "  TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}",
-            "};"
-        }
-    }), s("stdc", {t {"#include <bits/stdc++.h>", "using namespace std;"}})
+  s("lnode", {
+    t {
+      "struct ListNode {",
+      "  int val;",
+      "  ListNode *next;",
+      "  ListNode() : val(0), next(nullptr) {}",
+      "  ListNode(int x) : val(x), next(nullptr) {}",
+      "  ListNode(int x, ListNode *next) : val(x), next(next) {}",
+      "};",
+    },
+  }),
+  s("tnode", {
+    t {
+      "struct TreeNode{",
+      "  int val;",
+      "  TreeNode *left, *right;",
+      "  TreeNode() : val(0), left(nullptr), right(nullptr) {}",
+      "  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}",
+      "  TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}",
+      "};",
+    },
+  }),
+  s("stdc", { t { "#include <bits/stdc++.h>", "using namespace std;" } }),
 }
