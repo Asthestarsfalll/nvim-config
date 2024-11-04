@@ -20,6 +20,9 @@ return {
         HighlightURL = { underline = true }, -- always underline URLs
         OctoEditable = { fg = "NONE", bg = "NONE" }, -- use treesitter for octo.nvim highlighting
         PmenuSel = { bg = "#31748f", fg = "#21202e", bold = true, italic = true },
+        -- TreesitterContextLineNumber = { fg = "#eb6f92" },
+        TreesitterContextLineNumberBottom = { bg = "#31748f" },
+        TreesitterContextBottom = { bg = "#31748f" },
       },
       astrotheme = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
