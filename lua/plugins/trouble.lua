@@ -3,7 +3,7 @@ return {
     "folke/trouble.nvim",
     cmd = "Trouble",
     dependencies = {
-     { "AstroNvim/astroui", opts = { icons = { Trouble = "󱍼" } } },
+      { "AstroNvim/astroui", opts = { icons = { Trouble = "󱍼" } } },
       {
         "AstroNvim/astrocore",
         opts = function(_, opts)

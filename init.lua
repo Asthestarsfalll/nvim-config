@@ -17,10 +17,11 @@ if not pcall(require, "lazy") then
         {("Unable to load lazy from: %s\n"):format(lazypath), "ErrorMsg"},
         {"Press any key to exit...", "MoreMsg"}
     }, true, {})
-    vim.fn.getchar()
-    vim.cmd.quit()
+  vim.fn.getchar()
+  vim.cmd.quit()
 end
 
 require "lazy_setup"
 require "polish"
 require "utils"
+if vim.g.neovide then require "neovide" end

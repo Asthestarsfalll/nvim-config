@@ -1,6 +1,6 @@
 return {
   "m4xshen/hardtime.nvim",
-  enabled=false,
+  enabled = false,
   event = "User AstroFile",
   opts = {
     disabled_keys = {

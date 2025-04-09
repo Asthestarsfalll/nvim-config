@@ -1,7 +1,7 @@
 return {
   "azabiong/vim-highlighter",
   lazy = true, -- Not Lazy by default
-  event="User TrueLoad",
+  event = "User TrueLoad",
   keys = {
     -- These are basing keymaps to guide new users
     { "f<Enter>", desc = "Highlight" },

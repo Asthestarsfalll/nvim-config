@@ -3,6 +3,13 @@
 
 ---@type LazySpec
 return {
+
+  "andweeb/presence.nvim",
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function() require("lsp_signature").setup() end,
+  },
   {
     "wakatime/vim-wakatime",
     event = "VimEnter",
@@ -29,7 +36,6 @@ return {
     "h-hg/fcitx.nvim",
     event = "BufEnter",
   },
-
   {
     "0x00-ketsu/maximizer.nvim",
     config = function()
@@ -40,7 +46,6 @@ return {
       }
     end,
   },
-
   {
     "kylechui/nvim-surround",
     -- version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -115,7 +120,8 @@ return {
   },
   {
     "Asthestarsfalll/clock.nvim",
-    event = "User TrueLoad",
+    -- event = "User TrueLoad",
+    event = "VeryLazy",
     config = function() require("clock").setup {} end,
   },
   { "junegunn/vim-easy-align", event = "User AstroFile" },
@@ -385,5 +391,22 @@ return {
         desc = "Jumping to context (upwards)",
       },
     },
+  },
+  {
+    name = "code-tracker",
+    dir = "/data/workspace/learning/filereader",
+    lazy = false,
+    config = function()
+      require("code-tracker").setup {
+        -- 可选配置
+        position = "right", -- 或 "float"
+        width = 30,
+        height = 20,
+        mappings = {
+          toggle = "<leader>ct", -- 自定义快捷键
+          toggle_float = "<leader>cf",
+        },
+      }
+    end,
   },
 }
