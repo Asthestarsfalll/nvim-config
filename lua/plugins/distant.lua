@@ -1,5 +1,6 @@
 return {
   "chipsenkbeil/distant.nvim",
+  enable = false,
   branch = "v0.3",
   cmd = {
     "DistantLaunch",

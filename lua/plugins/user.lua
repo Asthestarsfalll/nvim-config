@@ -30,8 +30,8 @@ return {
     end,
   },
 
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  "folke/tokyonight.nvim",
+  -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  -- "folke/tokyonight.nvim",
   {
     "h-hg/fcitx.nvim",
     event = "BufEnter",
@@ -48,8 +48,8 @@ return {
   },
   {
     "kylechui/nvim-surround",
-    -- version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "User TrueLoad",
+    version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
+    event = "User AstroFile",
     config = function()
       require("nvim-surround").setup {
         -- Configuration here, or leave empty to use defaults
@@ -65,7 +65,7 @@ return {
   },
   {
     "folke/zen-mode.nvim",
-    event = "User TrueLoad",
+    event = "User AstroFile",
     opts = {
       -- your configuration comes here
       -- or leave it empty to use the default settings
@@ -87,15 +87,15 @@ return {
   },
   {
     "mvllow/modes.nvim",
-    event = "User TrueLoad",
+    event = "User AstroFile",
     tag = "v0.2.0",
     config = function()
       require("modes").setup {
         colors = {
-          -- copy = "#f5c359",
+          copy = "#f5c359",
           -- -- delete = "#c75c6a",
-          -- delete = "#c75c6a",
-          -- -- insert = "#78ccc5",
+          delete = "#c75c6a",
+          insert = "#78ccc5",
           -- insert = "#c75c6a",
           visual = "#9745be",
         },
@@ -126,24 +126,6 @@ return {
   },
   { "junegunn/vim-easy-align", event = "User AstroFile" },
   {
-    "Aasim-A/scrollEOF.nvim",
-    event = "User AstroFile",
-    config = function()
-      require("scrollEOF").setup {
-        -- The pattern used for the internal autocmd to determine
-        -- where to run scrollEOF. See https://neovim.io/doc/user/autocmd.html#autocmd-pattern
-        pattern = "*",
-        -- Whether or not scrollEOF should be enabled in insert mode
-        insert_mode = false,
-        -- List of filetypes to disable scrollEOF for.
-        disabled_filetypes = {},
-        -- List of modes to disable scrollEOF for. see https://neovim.io/doc/user/builtin.html#mode() for available modes.
-        disabled_modes = {},
-      }
-    end,
-  },
-  { "f-person/git-blame.nvim" },
-  {
     "karb94/neoscroll.nvim",
     -- event = "User TrueLoad",
     event = "VeryLazy",
@@ -152,7 +134,7 @@ return {
         -- All these keys will be mapped to their corresponding default scrolling animation
         mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
         hide_cursor = true, -- Hide cursor while scrolling
-        stop_eof = true, -- Stop at <EOF> when scrolling downwards
+        stop_eof = false, -- Stop at <EOF> when scrolling downwards
         respect_scrolloff = false, -- Stop scrolling when the cursor reaches the scrolloff margin of the file
         cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
         easing_function = nil, -- Default easing function
@@ -237,15 +219,6 @@ return {
         cache_dir = nil,
       }
     end,
-  },
-
-  {
-    "rebelot/heirline.nvim",
-    event = "User TrueLoad",
-  },
-  {
-    "nvim-tree/nvim-web-devicons",
-    event = "User TrueLoad",
   },
   {
     "NeogitOrg/neogit",
@@ -340,7 +313,7 @@ return {
     end,
   },
   -- TODO:https://github.com/AstroNvim/AstroNvim/issues/2593{
-  { "NvChad/nvim-colorizer.lua", enabled = false },
+  { "NvChad/nvim-colorizer.lua", enabled = true },
   {
     "brenoprata10/nvim-highlight-colors",
     event = "User TureLoad",
@@ -391,22 +364,5 @@ return {
         desc = "Jumping to context (upwards)",
       },
     },
-  },
-  {
-    name = "code-tracker",
-    dir = "/data/workspace/learning/filereader",
-    lazy = false,
-    config = function()
-      require("code-tracker").setup {
-        -- 可选配置
-        position = "right", -- 或 "float"
-        width = 30,
-        height = 20,
-        mappings = {
-          toggle = "<leader>ct", -- 自定义快捷键
-          toggle_float = "<leader>cf",
-        },
-      }
-    end,
   },
 }

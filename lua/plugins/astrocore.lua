@@ -76,10 +76,9 @@ return {
         },
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
-        ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-        ["<Leader>r"] = { "<cmd>RustRun<cr>" },
+        -- ["<Leader>r"] = { "<cmd>RustRun<cr>" },
         ["<Leader>="] = { "<cmd>Navbuddy<cr>" },
         ["<Leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
         -- tables with the `name` key will be registered with which-key if it's installed
@@ -87,7 +86,7 @@ return {
         ["<Leader>b"] = { name = "Buffers" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-        ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+        ["<C-\\>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle terminal" },
         ["<S-w>"] = { function() require("astrocore.buffer").close() end, desc = "Close buffer" },
 
         -- Navigate tabs
@@ -118,7 +117,7 @@ return {
         ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
       },
       i = {
-        ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+        ["<C-\\>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle terminal" },
 
         ["<C-h>"] = { "<Left>" },
         ["<C-j>"] = { "<Down>" },

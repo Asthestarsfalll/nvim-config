@@ -1,6 +1,6 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
-  event = "User TrueLoad",
+  event = "User AstroFile",
   main = "ibl",
   opts = {
     scope = {

@@ -40,16 +40,20 @@ return {
         "NormalFloat",
         "NvimTreeNormal",
       },
-      --   exclude_groups = {
-      --     "CursorLine",
-      --     "CursorLineNr",
-      --     "StatusLine",
-      --     "TabLine",
-      --   },
+      exclude_groups = {
+        "NotifyBackground",
+        "CursorLine",
+        "CursorLineNr",
+        -- "StatusLine",
+        -- "TabLine",
+      },
     }
     transparent.clear_prefix "BufferLine"
     transparent.clear_prefix "NeoTree"
     transparent.clear_prefix "lualine"
+    require("notify").setup {
+      background_colour = "#000000",
+    }
   end,
   keys = {
     { prefix .. "T", "<cmd>TransparentToggle<CR>", desc = "Toggle transparency" },
