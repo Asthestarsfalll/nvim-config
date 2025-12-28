@@ -13,6 +13,7 @@ return {
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
+        PrecognitionHighlight = {fg="#31748f"},
         CursorLineFold = { link = "CursorLineNr" }, -- highlight fold indicator as well as line number
         CursorLineNr = { fg = "#eb6f92", bold = true },
         TermCursor = { bg = "#eb6f92" },
@@ -23,10 +24,11 @@ return {
         -- TreesitterContextLineNumber = { fg = "#eb6f92" },
         TreesitterContextLineNumberBottom = { bg = "#31748f" },
         TreesitterContextBottom = { bg = "#31748f" },
+        SnacksIndentChunk = { fg="#eb6f92", bold = true }
       },
-      astrotheme = { -- a table of overrides/changes when applying the astrotheme theme
-        -- Normal = { bg = "#000000" },
-      },
+      -- astrodark = { -- a table of overrides/changes when applying the astrotheme theme
+      --   -- Normal = { bg = "#000000" },
+      -- },
     },
     -- Icons can be configured throughout the interface
     icons = {
@@ -64,7 +66,7 @@ return {
       icon_highlights = {
         breadcrumbs = false, -- LSP symbols in the breadcrumbs
         file_icon = {
-          winbar = true, -- Filetype icon in the winbar inactive windows
+          winbar = false, -- Filetype icon in the winbar inactive windows
           statusline = true, -- Filetype icon in the statusline
           tabline = true, -- Filetype icon in the tabline
         },

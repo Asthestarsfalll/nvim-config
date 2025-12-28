@@ -1,9 +1,7 @@
-return {
-  "L3MON4D3/LuaSnip",
-  event = "User TrueLoad",
-  version = "v2.*",
-  config = function(plugin, opts)
-    require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+ return  {
+    "L3MON4D3/LuaSnip",
+    config = function(plugin, opts)
+      require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
     local ls = require "luasnip"
     ls.filetype_extend("javascript", { "javascriptreact" })
     ls.filetype_extend("", { "markdown" })
@@ -12,4 +10,4 @@ return {
       paths = { "~/.config/nvim/snips" },
     }
   end,
-}
+  }

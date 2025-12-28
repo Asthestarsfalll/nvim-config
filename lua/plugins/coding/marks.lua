@@ -19,10 +19,9 @@ return {
       },
     },
   },
-
   {
     "chentoast/marks.nvim",
-    event = "User AstroFile",
+    event = "VeryLazy",
     opts = {
       default_mappings = false,
       excluded_filetypes = {
